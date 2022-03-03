@@ -37,9 +37,8 @@ namespace OOD_Lab6
         {
 
             //Query the db for all authors
-            var query = from d in db.Authors
-                                    orderby d.Name
-                                    select d.Name;
+            var query = from a in db.Authors
+                                    select a;
 
             //Assign the resulting list of authors as data source for 
             //The authors listbox
@@ -57,7 +56,7 @@ namespace OOD_Lab6
             //Get reference to the listbox that sent this event
             ListBox box = (ListBox) sender;
             //Get reference to the selected author
-            string author = (string) box.SelectedItem;
+            Author author = (Author)box.SelectedItem;
 
             //If the author selected is not null
             if (author != null)
@@ -65,7 +64,7 @@ namespace OOD_Lab6
                 //Query the database for the boos matching the selected author
                 var query = 
                                             from b in db.Books
-                                            where b.Author.Name.Equals(author)
+                                            where b.Author.Id == author.Id
                                             select b.Title;
 
                 //Assign the query's result set as the data source for the books listbox

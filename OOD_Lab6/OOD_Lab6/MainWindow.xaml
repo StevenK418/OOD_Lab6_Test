@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        <ListBox x:Name="LSTBX_Authors" HorizontalAlignment="Left" Height="260" Margin="76,82,0,0" VerticalAlignment="Top" Width="227" SelectionChanged="LSTBX_Authors_SelectionChanged"/>
+        <ListBox x:Name="LSTBX_Authors" HorizontalAlignment="Left" Height="260" Margin="76,82,0,0" VerticalAlignment="Top" Width="227" SelectionChanged="LSTBX_Authors_SelectionChanged" DisplayMemberPath="Name"/>
         <Label Content="AUTHORS" HorizontalAlignment="Left" Margin="76,51,0,0" VerticalAlignment="Top" Width="227"/>
         <ListBox x:Name="LSTBXBooks" HorizontalAlignment="Left" Height="260" Margin="457,82,0,0" VerticalAlignment="Top" Width="262"/>
         <Label Content="BOOKS" HorizontalAlignment="Left" Margin="457,51,0,0" VerticalAlignment="Top" Width="262"/>
