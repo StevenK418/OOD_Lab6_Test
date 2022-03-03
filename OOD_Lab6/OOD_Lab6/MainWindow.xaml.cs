@@ -56,15 +56,19 @@ namespace OOD_Lab6
             //Get reference to the listbox that sent this event
             ListBox box = (ListBox) sender;
             //Get reference to the selected author
-            Author author = (Author)box.SelectedItem;
+            //Author author = (Author)box.SelectedItem;
+
+            //Get reference to the selected author via ID
+            //Incremented due to items being zero indexed by default
+            int selectedAuthorID = (int) box.SelectedValue;
 
             //If the author selected is not null
-            if (author != null)
+            if (selectedAuthorID > 0)
             {
                 //Query the database for the boos matching the selected author
                 var query = 
                                             from b in db.Books
-                                            where b.Author.Id == author.Id
+                                            where b.Author.Id == selectedAuthorID
                                             select b.Title;
 
                 //Assign the query's result set as the data source for the books listbox
