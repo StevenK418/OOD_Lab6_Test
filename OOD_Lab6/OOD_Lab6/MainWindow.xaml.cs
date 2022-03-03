@@ -56,24 +56,32 @@ namespace OOD_Lab6
             //Get reference to the listbox that sent this event
             ListBox box = (ListBox) sender;
             //Get reference to the selected author
-            //Author author = (Author)box.SelectedItem;
-
-            //Get reference to the selected author via ID
-            //Incremented due to items being zero indexed by default
-            int selectedAuthorID = (int) box.SelectedValue;
+            Author author = (Author)box.SelectedItem;
 
             //If the author selected is not null
-            if (selectedAuthorID > 0)
+            if (author != null)
             {
                 //Query the database for the boos matching the selected author
                 var query = 
                                             from b in db.Books
-                                            where b.Author.Id == selectedAuthorID
+                                            where b.Author.Id == author.Id
                                             select b.Title;
 
                 //Assign the query's result set as the data source for the books listbox
                 LSTBXBooks.ItemsSource = query.ToList();
             }
+        }
+    }
+
+    public partial class Author
+    {
+        /// <summary>
+        /// Overrides the ToString Method of the parent class. 
+        /// </summary>
+        /// <returns>Returns the name property value as a string</returns>
+        public override string ToString()
+        {
+            return $"{Name}";
         }
     }
 }
