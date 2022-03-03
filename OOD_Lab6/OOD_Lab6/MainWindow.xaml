@@ -5,8 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:OOD_Lab6"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid>
-        
+        <ListBox x:Name="LSTBX_Authors" HorizontalAlignment="Left" Height="260" Margin="76,82,0,0" VerticalAlignment="Top" Width="227"/>
+        <Label Content="AUTHORS" HorizontalAlignment="Left" Margin="76,51,0,0" VerticalAlignment="Top" Width="227"/>
+        <ListBox x:Name="LSTBXBooks" HorizontalAlignment="Left" Height="260" Margin="504,82,0,0" VerticalAlignment="Top" Width="215"/>
+        <Label Content="BOOKS" HorizontalAlignment="Left" Margin="504,51,0,0" VerticalAlignment="Top" Width="215"/>
+
     </Grid>
 </Window>

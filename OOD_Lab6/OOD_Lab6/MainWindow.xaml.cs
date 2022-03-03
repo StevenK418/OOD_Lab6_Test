@@ -20,9 +20,20 @@ namespace OOD_Lab6
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Model1Container db = new Model1Container();
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            var query = from d in db.Authors
+                                    orderby d.Name
+                                    select d.Name;
+
+            LSTBX_Authors.ItemsSource = query.ToList();
         }
     }
 }
