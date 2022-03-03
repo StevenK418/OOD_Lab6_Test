@@ -72,16 +72,4 @@ namespace OOD_Lab6
             }
         }
     }
-
-    public partial class Author
-    {
-        /// <summary>
-        /// Overrides the ToString Method of the parent class. 
-        /// </summary>
-        /// <returns>Returns the name property value as a string</returns>
-        public override string ToString()
-        {
-            return $"{Name}";
-        }
-    }
 }
